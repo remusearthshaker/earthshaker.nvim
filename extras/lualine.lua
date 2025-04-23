@@ -1,4 +1,5 @@
 -- Earthshaker lualine theme
+-- Automatically registers as 'earthshaker'
 
 local colors = {
 	bg = "#1c1b1a",
@@ -14,7 +15,7 @@ local colors = {
 	red = "#f3b87a",
 }
 
-return {
+local earthshaker = {
 	normal = {
 		a = { bg = colors.orange, fg = colors.bg, gui = "bold" },
 		b = { bg = colors.darkblue, fg = colors.orange },
@@ -36,8 +37,13 @@ return {
 		c = { bg = colors.bg, fg = colors.fg },
 	},
 	inactive = {
-		a = { bg = colors.bg, fg = colors.comment, gui = "bold" },
-		b = { bg = colors.bg, fg = colors.comment },
-		c = { bg = colors.bg, fg = colors.comment },
+		a = { bg = colors.bg, fg = colors.cyan, gui = "bold" },
+		b = { bg = colors.bg, fg = colors.cyan },
+		c = { bg = colors.bg, fg = colors.cyan },
 	},
 }
+
+-- Register the theme globally
+require("lualine.themes")["earthshaker"] = earthshaker
+
+return earthshaker
