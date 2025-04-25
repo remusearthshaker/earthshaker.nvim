@@ -45,6 +45,11 @@ Earthshaker is a grounded, moody theme designed for terminal dwellers who prefer
 
 ---
 
+## Images
+
+![Earthshaker Lua Preview](assets/earthshakerlua.png)
+![Earthshaker Markdown Preview](assets/earthshakermarkdown.png)
+
 ## 🪪 License
 
 This theme is licensed under the [GNU General Public License v3.0](LICENSE). Use it, fork it, modify it. Just remember to respect the spirit of open source.
