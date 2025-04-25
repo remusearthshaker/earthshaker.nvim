@@ -11,13 +11,13 @@ M.colors = {
 	visual_bg = "#2e2d2c",
 	comment = "#888878",
 	string = "#708271",
-	keyword = "#bfa780",
-	func = "#a6783b",
+	keyword = "#deb769",
+	func = "#e49b5d",
 	type = "#c69455",
 	variable = "#d8c8b3",
-	constant = "#e5cfa3",
-	warning = "#f3b87a",
-	error = "#e49b5d",
+	constant = "#f3b87a",
+	warning = "#c47e35",
+	error = "#e17340",
 	line_num = "#3a3938",
 	accent = "#8a6c47",
 }
@@ -40,6 +40,7 @@ M.setup = function()
 	vim.api.nvim_set_hl(0, "CursorLineNr", { fg = c.warning, bold = true })
 	vim.api.nvim_set_hl(0, "StatusLine", { fg = c.bg, bg = c.accent })
 	vim.api.nvim_set_hl(0, "StatusLineNC", { fg = c.comment, bg = c.line_num })
+	vim.api.nvim_set_hl(0, "CursorLine", { bg = "#232220" })
 
 	-- Syntax
 	vim.api.nvim_set_hl(0, "Comment", { fg = c.comment, italic = true })
