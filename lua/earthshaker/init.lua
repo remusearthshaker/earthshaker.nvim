@@ -61,6 +61,35 @@ M.setup = function()
 	vim.api.nvim_set_hl(0, "@string", { fg = c.string })
 	vim.api.nvim_set_hl(0, "@constant", { fg = c.constant })
 	vim.api.nvim_set_hl(0, "@variable", { fg = c.variable })
+
+	-- nvim-tree UI integration
+	vim.api.nvim_set_hl(0, "NvimTreeNormal", { fg = c.fg, bg = c.bg })
+	vim.api.nvim_set_hl(0, "NvimTreeNormalNC", { fg = c.fg, bg = c.bg })
+	vim.api.nvim_set_hl(0, "NvimTreeVertSplit", { fg = c.line_num, bg = c.bg })
+	vim.api.nvim_set_hl(0, "NvimTreeStatusLine", { fg = c.line_num, bg = c.bg })
+	vim.api.nvim_set_hl(0, "NvimTreeStatusLineNC", { fg = c.line_num, bg = c.bg })
+	vim.api.nvim_set_hl(0, "NvimTreeEndOfBuffer", { fg = c.bg, bg = c.bg })
+
+	-- neo-tree integration
+	vim.api.nvim_set_hl(0, "NeoTreeNormal", { fg = c.fg, bg = c.bg })
+	vim.api.nvim_set_hl(0, "NeoTreeNormalNC", { fg = c.fg, bg = c.bg })
+	vim.api.nvim_set_hl(0, "NeoTreeEndOfBuffer", { fg = c.bg, bg = c.bg })
+	vim.api.nvim_set_hl(0, "NeoTreeVertSplit", { fg = c.line_num, bg = c.bg })
+	vim.api.nvim_set_hl(0, "NeoTreeStatusLine", { fg = c.line_num, bg = c.bg })
+	vim.api.nvim_set_hl(0, "NeoTreeStatusLineNC", { fg = c.line_num, bg = c.bg })
+
+	-- snacks.nvim highlight integration
+	vim.api.nvim_set_hl(0, "SnackNormal", { fg = c.fg, bg = c.bg })
+	vim.api.nvim_set_hl(0, "SnackBorder", { fg = c.line_num, bg = c.bg })
+	vim.api.nvim_set_hl(0, "SnackTitle", { fg = c.keyword, bg = c.bg, bold = true })
+	vim.api.nvim_set_hl(0, "SnackPrompt", { fg = c.fg, bg = c.visual_bg })
+	vim.api.nvim_set_hl(0, "SnackPromptBorder", { fg = c.line_num, bg = c.bg })
+	vim.api.nvim_set_hl(0, "SnackPromptPrefix", { fg = c.accent })
+	vim.api.nvim_set_hl(0, "SnackPromptCounter", { fg = c.comment })
+	vim.api.nvim_set_hl(0, "SnackMatch", { fg = c.constant, bold = true })
+	vim.api.nvim_set_hl(0, "SnackSelection", { fg = c.fg, bg = c.visual_bg, bold = true })
+	vim.api.nvim_set_hl(0, "SnackScrollbar", { fg = c.comment })
+	vim.api.nvim_set_hl(0, "SnackThumb", { fg = c.line_num, bg = c.line_num })
 end
 
 return M
