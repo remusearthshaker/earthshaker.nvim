@@ -11,6 +11,7 @@ Earthshaker is a grounded, moody theme designed for terminal dwellers who prefer
 - Full support for `nvim` UI elements
 - Treesitter syntax highlights
 - Lualine-compatible statusline
+- works with neo-tree, nvim-tree, and snacks pickers
 - Minimalist, earthy color palette
 - Built with Lua, for modern Neovim setups
 
@@ -19,36 +20,32 @@ Earthshaker is a grounded, moody theme designed for terminal dwellers who prefer
 ## 📦 Installation (with lazy.nvim)
 
 ```lua
-{
+return {
   "remusearthshaker/earthshaker.nvim",
   lazy = false,
   priority = 1000,
-  config = function()
-    require("themes.earthshaker").setup()
-  end,
 }
 ```
 
----
+then within a separate file you can specify
 
-## 🎨 Color Reference
+```lua
+return {
+    "LazyVim/LazyVim",
+    opts = {
+        colorscheme = "earthshaker"
+    }
+}
+```
 
-| Element    | Color     | Hex       |
-| ---------- | --------- | --------- |
-| Background | charcoal  | `#1c1b1a` |
-| Foreground | parchment | `#d8c8b3` |
-| Accent     | bronze    | `#e49b5d` |
-| Visual BG  | soft gray | `#2e2d2c` |
-| Comments   | moss      | `#888878` |
-| Strings    | olive     | `#708271` |
-| Keywords   | goldleaf  | `#bfa780` |
+or you can run `:colorscheme earthshaker` within neovim
 
 ---
 
 ## Images
 
-![Earthshaker Lua Preview](assets/earthshakerlua.png)
-![Earthshaker Markdown Preview](assets/earthshakermarkdown.png)
+![Earthshaker Vue Preview](assets/earthshakervue.png)
+![Earthshaker Rust Preview](assets/earthshakerrust.png)
 
 ## 🪪 License
 
