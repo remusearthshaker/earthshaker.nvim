@@ -44,7 +44,7 @@ or you can run `:colorscheme earthshaker` within neovim
 
 ## Images
 
-![Earthshaker Vue Preview](assets/earthshakervue.png)
+![Earthshaker Vue Preview](assets/earthshakercss.png)
 ![Earthshaker Rust Preview](assets/earthshakerrust.png)
 
 ## 🪪 License
