@@ -131,7 +131,7 @@ M.lualine = {
 		a = { bg = M.colors.rose, fg = M.colors.bg, gui = "bold" },
 	},
 	replace = {
-		a = { bg = M.colors.pollen, fg = M.colors.bg, gui = "bold" },
+		a = { bg = M.colors.periwinkle, fg = M.colors.bg, gui = "bold" },
 	},
 	inactive = {
 		a = { bg = M.colors.bg, fg = M.colors.comment },
