@@ -22,7 +22,7 @@ M.colors = {
 	boolean = "#e27d60",
 	operator = "#a3b18a",
 	field = "#dab785",
-	property = "#ffa0c5", -- vibrant rosy pink
+	property = "#b5bfa1", -- reverted to original muted tone
 	parameter = "#a3c2ff", -- soft sky blue
 	namespace = "#809775",
 	punctuation = "#a6a6a6",
@@ -53,7 +53,7 @@ function M.setup()
 	vim.api.nvim_set_hl(0, "Visual", { fg = c.fg, bg = c.visual_bg })
 	vim.api.nvim_set_hl(0, "LineNr", { fg = c.line_num })
 	vim.api.nvim_set_hl(0, "CursorLineNr", { fg = c.pollen, bold = true })
-	vim.api.nvim_set_hl(0, "StatusLine", { fg = c.bg, bg = c.periwinkle })
+	vim.api.nvim_set_hl(0, "StatusLine", { fg = c.fg, bg = c.line_num })
 	vim.api.nvim_set_hl(0, "StatusLineNC", { fg = c.comment, bg = c.line_num })
 	vim.api.nvim_set_hl(0, "CursorLine", { bg = c.visual_bg })
 
@@ -99,12 +99,12 @@ end
 
 M.lualine = {
 	normal = {
-		a = { bg = M.colors.pollen, fg = M.colors.bg, gui = "bold" },
-		b = { bg = M.colors.visual_bg, fg = M.colors.rose },
-		c = { bg = M.colors.bg, fg = M.colors.periwinkle },
+		a = { bg = M.colors.line_num, fg = M.colors.fg, gui = "bold" },
+		b = { bg = M.colors.bg, fg = M.colors.comment },
+		c = { bg = M.colors.bg, fg = M.colors.fg },
 	},
 	insert = {
-		a = { bg = M.colors.lavender, fg = M.colors.bg, gui = "bold" },
+		a = { bg = M.colors.string, fg = M.colors.bg, gui = "bold" },
 	},
 	visual = {
 		a = { bg = M.colors.rose, fg = M.colors.bg, gui = "bold" },
