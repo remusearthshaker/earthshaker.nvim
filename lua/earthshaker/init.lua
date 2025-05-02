@@ -30,9 +30,13 @@ M.colors = {
 	accent = "#6c8f6c",
 	enum = "#ffc07c",
 	attribute = "#c49ca0",
+	lavender = "#b57edc",
+	periwinkle = "#ccccff",
+	rose = "#ffb6c1",
+	pollen = "#f5e050",
 }
 
-M.setup = function()
+function M.setup()
 	local c = M.colors
 
 	vim.cmd("highlight clear")
@@ -48,8 +52,8 @@ M.setup = function()
 	vim.api.nvim_set_hl(0, "Cursor", { fg = c.bg, bg = c.cursor })
 	vim.api.nvim_set_hl(0, "Visual", { fg = c.fg, bg = c.visual_bg })
 	vim.api.nvim_set_hl(0, "LineNr", { fg = c.line_num })
-	vim.api.nvim_set_hl(0, "CursorLineNr", { fg = c.warning, bold = true })
-	vim.api.nvim_set_hl(0, "StatusLine", { fg = c.bg, bg = c.accent })
+	vim.api.nvim_set_hl(0, "CursorLineNr", { fg = c.lavender, bold = true })
+	vim.api.nvim_set_hl(0, "StatusLine", { fg = c.bg, bg = c.pollen })
 	vim.api.nvim_set_hl(0, "StatusLineNC", { fg = c.comment, bg = c.line_num })
 	vim.api.nvim_set_hl(0, "CursorLine", { bg = "#232220" })
 
@@ -67,7 +71,7 @@ M.setup = function()
 	vim.api.nvim_set_hl(0, "Boolean", { fg = c.boolean })
 	vim.api.nvim_set_hl(0, "Operator", { fg = c.operator })
 
-	-- Treesitter (full coverage)
+	-- Treesitter
 	vim.api.nvim_set_hl(0, "@comment", { fg = c.comment, italic = true })
 	vim.api.nvim_set_hl(0, "@keyword", { fg = c.keyword, bold = true })
 	vim.api.nvim_set_hl(0, "@function", { fg = c.func })
@@ -83,12 +87,10 @@ M.setup = function()
 	vim.api.nvim_set_hl(0, "@enum", { fg = c.enum })
 	vim.api.nvim_set_hl(0, "@attribute", { fg = c.attribute })
 	vim.api.nvim_set_hl(0, "@parameter", { fg = c.parameter })
-	vim.api.nvim_set_hl(0, "@field", { fg = c.field })
 	vim.api.nvim_set_hl(0, "@property", { fg = c.property })
 	vim.api.nvim_set_hl(0, "@type", { fg = c.type, bold = true })
-	vim.api.nvim_set_hl(0, "@variable", { fg = c.variable })
 
-	-- nvim-tree UI
+	-- Plugins
 	vim.api.nvim_set_hl(0, "NvimTreeNormal", { fg = c.fg, bg = c.bg })
 	vim.api.nvim_set_hl(0, "NvimTreeNormalNC", { fg = c.fg, bg = c.bg })
 	vim.api.nvim_set_hl(0, "NvimTreeVertSplit", { fg = c.line_num, bg = c.bg })
@@ -96,7 +98,6 @@ M.setup = function()
 	vim.api.nvim_set_hl(0, "NvimTreeStatusLineNC", { fg = c.line_num, bg = c.bg })
 	vim.api.nvim_set_hl(0, "NvimTreeEndOfBuffer", { fg = c.bg, bg = c.bg })
 
-	-- neo-tree UI
 	vim.api.nvim_set_hl(0, "NeoTreeNormal", { fg = c.fg, bg = c.bg })
 	vim.api.nvim_set_hl(0, "NeoTreeNormalNC", { fg = c.fg, bg = c.bg })
 	vim.api.nvim_set_hl(0, "NeoTreeEndOfBuffer", { fg = c.bg, bg = c.bg })
@@ -104,7 +105,6 @@ M.setup = function()
 	vim.api.nvim_set_hl(0, "NeoTreeStatusLine", { fg = c.line_num, bg = c.bg })
 	vim.api.nvim_set_hl(0, "NeoTreeStatusLineNC", { fg = c.line_num, bg = c.bg })
 
-	-- snacks.nvim UI
 	vim.api.nvim_set_hl(0, "SnackNormal", { fg = c.fg, bg = c.bg })
 	vim.api.nvim_set_hl(0, "SnackBorder", { fg = c.line_num, bg = c.bg })
 	vim.api.nvim_set_hl(0, "SnackTitle", { fg = c.keyword, bg = c.bg, bold = true })
@@ -118,26 +118,25 @@ M.setup = function()
 	vim.api.nvim_set_hl(0, "SnackThumb", { fg = c.line_num, bg = c.line_num })
 end
 
--- Inline Lualine theme
 M.lualine = {
 	normal = {
-		a = { bg = M.colors.accent, fg = M.colors.bg, gui = "bold" },
-		b = { bg = M.colors.line_num, fg = M.colors.fg },
+		a = { bg = M.colors.periwinkle, fg = M.colors.bg, gui = "bold" },
+		b = { bg = M.colors.visual_bg, fg = M.colors.periwinkle },
 		c = { bg = M.colors.bg, fg = M.colors.fg },
 	},
 	insert = {
-		a = { bg = M.colors.string, fg = M.colors.bg, gui = "bold" },
+		a = { bg = M.colors.lavender, fg = M.colors.bg, gui = "bold" },
 	},
 	visual = {
-		a = { bg = M.colors.type, fg = M.colors.bg, gui = "bold" },
+		a = { bg = M.colors.rose, fg = M.colors.bg, gui = "bold" },
 	},
 	replace = {
-		a = { bg = M.colors.error, fg = M.colors.bg, gui = "bold" },
+		a = { bg = M.colors.pollen, fg = M.colors.bg, gui = "bold" },
 	},
 	inactive = {
-		a = { bg = M.colors.line_num, fg = M.colors.comment },
-		b = { bg = M.colors.line_num, fg = M.colors.comment },
-		c = { bg = M.colors.line_num, fg = M.colors.comment },
+		a = { bg = M.colors.bg, fg = M.colors.comment },
+		b = { bg = M.colors.bg, fg = M.colors.comment },
+		c = { bg = M.colors.bg, fg = M.colors.comment },
 	},
 }
 
