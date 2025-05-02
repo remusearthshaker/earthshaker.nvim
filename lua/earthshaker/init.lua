@@ -1,6 +1,6 @@
--- Earthshaker Neovim Theme Plugin
+-- Earthshaker.nvim — Vibrant Pastel Forest Edition
 -- Author: Remus Alexander
--- Theme reborn: the living forest, blooming and breathing
+-- A dark mode theme rooted in earth and blooming with vibrant life
 
 local M = {}
 
@@ -10,10 +10,10 @@ M.colors = {
 	cursor = "#ff9933",
 	visual_bg = "#2c302c",
 	comment = "#7c8474",
-	string = "#90b48f",
-	keyword = "#eabf6a",
-	func = "#f28b50",
-	type = "#d68e5d",
+	string = "#a0d8b3", -- brightened green
+	keyword = "#b57edc", -- lavender
+	func = "#ccccff", -- periwinkle
+	type = "#eabf6a",
 	variable = "#c9d8b6",
 	constant = "#ffc07c",
 	warning = "#f2a65e",
@@ -22,8 +22,8 @@ M.colors = {
 	boolean = "#e27d60",
 	operator = "#a3b18a",
 	field = "#dab785",
-	property = "#b5bfa1",
-	parameter = "#acc196",
+	property = "#ffa0c5", -- vibrant rosy pink
+	parameter = "#a3c2ff", -- soft sky blue
 	namespace = "#809775",
 	punctuation = "#a6a6a6",
 	line_num = "#444844",
@@ -52,16 +52,16 @@ function M.setup()
 	vim.api.nvim_set_hl(0, "Cursor", { fg = c.bg, bg = c.cursor })
 	vim.api.nvim_set_hl(0, "Visual", { fg = c.fg, bg = c.visual_bg })
 	vim.api.nvim_set_hl(0, "LineNr", { fg = c.line_num })
-	vim.api.nvim_set_hl(0, "CursorLineNr", { fg = c.lavender, bold = true })
-	vim.api.nvim_set_hl(0, "StatusLine", { fg = c.bg, bg = c.pollen })
+	vim.api.nvim_set_hl(0, "CursorLineNr", { fg = c.pollen, bold = true })
+	vim.api.nvim_set_hl(0, "StatusLine", { fg = c.bg, bg = c.periwinkle })
 	vim.api.nvim_set_hl(0, "StatusLineNC", { fg = c.comment, bg = c.line_num })
-	vim.api.nvim_set_hl(0, "CursorLine", { bg = "#232220" })
+	vim.api.nvim_set_hl(0, "CursorLine", { bg = c.visual_bg })
 
 	-- Syntax
 	vim.api.nvim_set_hl(0, "Comment", { fg = c.comment, italic = true })
 	vim.api.nvim_set_hl(0, "String", { fg = c.string })
 	vim.api.nvim_set_hl(0, "Keyword", { fg = c.keyword, bold = true })
-	vim.api.nvim_set_hl(0, "Function", { fg = c.func })
+	vim.api.nvim_set_hl(0, "Function", { fg = c.func, bold = true })
 	vim.api.nvim_set_hl(0, "Identifier", { fg = c.variable })
 	vim.api.nvim_set_hl(0, "Type", { fg = c.type })
 	vim.api.nvim_set_hl(0, "Constant", { fg = c.constant })
@@ -92,37 +92,16 @@ function M.setup()
 
 	-- Plugins
 	vim.api.nvim_set_hl(0, "NvimTreeNormal", { fg = c.fg, bg = c.bg })
-	vim.api.nvim_set_hl(0, "NvimTreeNormalNC", { fg = c.fg, bg = c.bg })
-	vim.api.nvim_set_hl(0, "NvimTreeVertSplit", { fg = c.line_num, bg = c.bg })
-	vim.api.nvim_set_hl(0, "NvimTreeStatusLine", { fg = c.line_num, bg = c.bg })
-	vim.api.nvim_set_hl(0, "NvimTreeStatusLineNC", { fg = c.line_num, bg = c.bg })
-	vim.api.nvim_set_hl(0, "NvimTreeEndOfBuffer", { fg = c.bg, bg = c.bg })
-
+	vim.api.nvim_set_hl(0, "NvimTreeRootFolder", { fg = c.rose, bold = true })
 	vim.api.nvim_set_hl(0, "NeoTreeNormal", { fg = c.fg, bg = c.bg })
-	vim.api.nvim_set_hl(0, "NeoTreeNormalNC", { fg = c.fg, bg = c.bg })
-	vim.api.nvim_set_hl(0, "NeoTreeEndOfBuffer", { fg = c.bg, bg = c.bg })
-	vim.api.nvim_set_hl(0, "NeoTreeVertSplit", { fg = c.line_num, bg = c.bg })
-	vim.api.nvim_set_hl(0, "NeoTreeStatusLine", { fg = c.line_num, bg = c.bg })
-	vim.api.nvim_set_hl(0, "NeoTreeStatusLineNC", { fg = c.line_num, bg = c.bg })
-
-	vim.api.nvim_set_hl(0, "SnackNormal", { fg = c.fg, bg = c.bg })
-	vim.api.nvim_set_hl(0, "SnackBorder", { fg = c.line_num, bg = c.bg })
 	vim.api.nvim_set_hl(0, "SnackTitle", { fg = c.keyword, bg = c.bg, bold = true })
-	vim.api.nvim_set_hl(0, "SnackPrompt", { fg = c.fg, bg = c.visual_bg })
-	vim.api.nvim_set_hl(0, "SnackPromptBorder", { fg = c.line_num, bg = c.bg })
-	vim.api.nvim_set_hl(0, "SnackPromptPrefix", { fg = c.accent })
-	vim.api.nvim_set_hl(0, "SnackPromptCounter", { fg = c.comment })
-	vim.api.nvim_set_hl(0, "SnackMatch", { fg = c.constant, bold = true })
-	vim.api.nvim_set_hl(0, "SnackSelection", { fg = c.fg, bg = c.visual_bg, bold = true })
-	vim.api.nvim_set_hl(0, "SnackScrollbar", { fg = c.comment })
-	vim.api.nvim_set_hl(0, "SnackThumb", { fg = c.line_num, bg = c.line_num })
 end
 
 M.lualine = {
 	normal = {
-		a = { bg = M.colors.periwinkle, fg = M.colors.bg, gui = "bold" },
-		b = { bg = M.colors.visual_bg, fg = M.colors.periwinkle },
-		c = { bg = M.colors.bg, fg = M.colors.fg },
+		a = { bg = M.colors.pollen, fg = M.colors.bg, gui = "bold" },
+		b = { bg = M.colors.visual_bg, fg = M.colors.rose },
+		c = { bg = M.colors.bg, fg = M.colors.periwinkle },
 	},
 	insert = {
 		a = { bg = M.colors.lavender, fg = M.colors.bg, gui = "bold" },
@@ -131,7 +110,7 @@ M.lualine = {
 		a = { bg = M.colors.rose, fg = M.colors.bg, gui = "bold" },
 	},
 	replace = {
-		a = { bg = M.colors.periwinkle, fg = M.colors.bg, gui = "bold" },
+		a = { bg = M.colors.error, fg = M.colors.bg, gui = "bold" },
 	},
 	inactive = {
 		a = { bg = M.colors.bg, fg = M.colors.comment },
